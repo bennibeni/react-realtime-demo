@@ -70,3 +70,9 @@ Il server Node serve `dist`, le sottopagine e i feed su http://127.0.0.1:4173. `
 Nel pannello Nasdaq hanno priorità i titoli che citano Moderna/MRNA, Nvidia/NVDA o Anthropic, riconosciuti senza distinzione di maiuscole e come parole intere. La priorità viene applicata prima di selezionare le 10 notizie; ciascun gruppo resta ordinato dal più recente. Le notizie prioritarie hanno titolo e bordo rossi e una dicitura testuale. La selezione considera i titoli presenti nei feed, non il testo completo degli articoli.
 
 Quando APOD restituisce il logo generico NASA Science oppure un errore, la pagina Spazio prova anche l'API ufficiale WordPress NASA Science (`wp-json/wp/v2/image-article`), selezionando lo slug APOD corrispondente alla data richiesta. Titolo, immagine, spiegazione e crediti sono estratti dalla risposta senza inserire HTML remoto nella pagina. Questo recupero funziona anche se il vecchio risultato incompleto è già in cache; le risposte NASA Science sono conservate per 24 ore. Il link originale punta all'articolo NASA Science della data selezionata.
+
+## Deploy su Vercel
+
+`vercel.json` configura Vite, installazione pulita con `npm ci`, output `dist` e rewrite delle sette sottopagine. `api/financial-news/composite.js` e `api/financial-news/nasdaq100.js` espongono i feed come Vercel Functions usando lo stesso servizio del server locale. Il runtime è fissato a Node 22.x.
+
+Non versionare `node_modules`, `dist` o i risultati dei test: sono esclusi da `.gitignore` e `.vercelignore`. Le dipendenze devono essere installate sulla piattaforma di destinazione, evitando i comandi `.bin` generati su Windows. Dopo il push di queste modifiche, avviare un nuovo deploy Vercel senza riutilizzare la cache precedente.

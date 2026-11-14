@@ -1,0 +1,16 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "vite",
+  "installCommand": "npm ci",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "rewrites": [
+    { "source": "/meteo", "destination": "/index.html" },
+    { "source": "/notizie", "destination": "/index.html" },
+    { "source": "/aria", "destination": "/index.html" },
+    { "source": "/cambio", "destination": "/index.html" },
+    { "source": "/terremoti", "destination": "/index.html" },
+    { "source": "/spazio", "destination": "/index.html" },
+    { "source": "/libri", "destination": "/index.html" }
+  ]
+}
