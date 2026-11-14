@@ -223,3 +223,26 @@ a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visibl
 .financial-news .news-priority { border-color: #ef4444; background: #291d29; }
 .financial-news .news-priority a { color: #fca5a5; }
 .priority-label { color: #fca5a5; font-size: 0.75rem; font-weight: 600; margin-bottom: 0.35rem; }
+
+/* Shared projects footer, matching the Keyboard app. */
+.projects-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  justify-content: space-between;
+  margin-top: 38px;
+  padding-top: 17px;
+  padding-bottom: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.35);
+  color: rgba(255, 255, 255, 0.72);
+  font: 400 10px "DM Mono", ui-monospace, monospace;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+.projects-footer a {
+  color: rgba(255, 255, 255, 0.72);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.projects-footer a:hover,
+.projects-footer a:focus-visible { color: #ff7a63; }

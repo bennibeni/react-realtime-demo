@@ -15,5 +15,9 @@ export default function Site() {
     <Suspense fallback={<p className="container" role="status">Caricamento pagina...</p>}>
       {path === '/' ? <App /> : isFeed ? <FeedPage key={source} source={source} /> : path === '/spazio' ? <SpacePage /> : path === '/libri' ? <BooksPage /> : <main className="container"><h1>Pagina non trovata</h1><a href="/">Torna alla dashboard</a></main>}
     </Suspense>
+    <footer className="projects-footer container">
+      <a href="https://links-page-bennibeni.vercel.app/">← ALLLINKS</a>
+      <span>Realtime · Meteo e notizie</span>
+    </footer>
   </>;
 }
